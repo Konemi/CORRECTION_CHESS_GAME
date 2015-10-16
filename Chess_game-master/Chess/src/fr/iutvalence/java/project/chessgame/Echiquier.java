@@ -10,15 +10,13 @@ import java.util.Map;
  */
 public class Echiquier
 {
-      /**
-       * Le nombre de cases par ligne
-       */
-      public static final int NOMBRE_DE_LIGNES = 8;
+
+      public static final int LINE_NUMBER = 8;
 
       /**
        * Le nombre de cases par colonne
        */
-      public static final int NOMBRE_DE_COLONNES = 8;
+      public static final int COLUMN_NUMBER = 8;
 
       /**
        * Les cases de l'échiquier
@@ -59,14 +57,11 @@ public class Echiquier
             this.creerEchiquier();
       }
 
-      /**
-       * Création de l'échiquier
-       */
       private void creerEchiquier()
       {
-            for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
+            for (int numeroDeLigne = 0; numeroDeLigne < LINE_NUMBER; numeroDeLigne++)
             {
-                  for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
+                  for (int numeroDeColonne = 0; numeroDeColonne < COLUMN_NUMBER; numeroDeColonne++)
                   {
                         if ((numeroDeLigne + numeroDeColonne) % 2 == 0)
                         {
@@ -80,12 +75,7 @@ public class Echiquier
             }
       }
 
-      /**
-       * Déplacer une pièce
-       *
-       * @param positionDepart la case de départ
-       * @param positionArrivee la case d'arrivée
-       */
+      
       public void deplacerPiece(Position positionDepart, Position positionArrivee)
       {
             AbstractPiece pieceADeplacer = this.obtenirPiece(positionDepart);
@@ -113,40 +103,24 @@ public class Echiquier
             return pieces;
       }
 
-      /**
-       * @return the blackKing
-       */
       public King getBlackKing()
       {
             return blackKing;
       }
 
-      /**
-       * @return the whiteKing
-       */
+
       public King getWhiteKing()
       {
             return whiteKing;
       }
 
-      /**
-       * Obtenir une case à une position donnée
-       *
-       * @param position la position de la case
-       * @return la case de l'échiquier à la position donnée
-       */
+
       private Square obtenirCase(Position position)
       {
             return square.get(position);
       }
 
-      /**
-       * Obtenir la pièce à une position donnée
-       *
-       * @param position la position
-       * @return la pièce posée sur la case ou <tt>null</tt> s'il n'y a pas de
-       *         pièce
-       */
+
       public AbstractPiece obtenirPiece(Position position)
       {
             return square.get(position).getPiece();
@@ -167,7 +141,7 @@ public class Echiquier
             Echiquier.poserPiece(this, new Position(0, 6), new Knight(ColorEnum.BLACK));
             Echiquier.poserPiece(this, new Position(0, 7), new ROOK(ColorEnum.BLACK));
 
-            for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
+            for (int numeroDeColonne = 0; numeroDeColonne < COLUMN_NUMBER; numeroDeColonne++)
             {
                   Echiquier.poserPiece(this, new Position(1, numeroDeColonne), new Pawn(ColorEnum.BLACK));
                   Echiquier.poserPiece(this, new Position(6, numeroDeColonne), new Pawn(ColorEnum.WHITE));

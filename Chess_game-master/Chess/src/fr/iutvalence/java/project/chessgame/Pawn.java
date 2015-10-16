@@ -30,14 +30,14 @@ public class Pawn extends AbstractPiece
       public Pawn(ColorEnum couleur)
       {
             super(couleur);
-            this.Piecetype = PieceType.PAWN;
+            this.pieceType = PieceType.PAWN;
             if (couleur == ColorEnum.BLACK)
             {
-                  this.PieceName = ListPieces.BLACK_PAWN;
+                  this.pieceName = ListPieces.BLACK_PAWN;
             }
             else
             {
-                  this.PieceName = ListPieces.WHITE_PAWN;
+                  this.pieceName = ListPieces.WHITE_PAWN;
             }
       }
 
@@ -68,7 +68,7 @@ public class Pawn extends AbstractPiece
                         i = positionDepart.obtenirNumeroDeLigne() - direction[0];
                   }
                   j = positionDepart.obtenirNumeroDeColonne() + direction[1];
-                  if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                  if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                   {
                         positionDeFin = Echiquier.square.get(newPosition = new Position(i, j));
                         if (positionDeFin.getPiece() != null)
@@ -86,7 +86,7 @@ public class Pawn extends AbstractPiece
                               {
                                     i = positionDepart.obtenirNumeroDeLigne() - 2;
                               }
-                              if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES)
+                              if (i >= 0 && i < Echiquier.LINE_NUMBER)
                               {
                                     positionDeFin2 = Echiquier.square.get(newPosition = new Position(i, j));
                                     if (!this.hasAlreadyMove && positionDeFin2.getPiece() == null)
@@ -108,7 +108,7 @@ public class Pawn extends AbstractPiece
                         i = positionDepart.obtenirNumeroDeLigne() - direction2[0];
                   }
                   j = positionDepart.obtenirNumeroDeColonne() + direction2[1];
-                  if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                  if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                   {
                         positionDeFin = Echiquier.square.get(newPosition = new Position(i, j));
                         if (positionDeFin.getPiece() == null)

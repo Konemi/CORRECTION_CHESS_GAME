@@ -99,7 +99,7 @@ public class BoardGUI extends JPanel implements ActionListener
                         {
                               try
                               {
-                                    Movement lastMovement = Game._moves.get(Game.currentMove);
+                                    Movement lastMovement = Game.everyLastMoves.get(Game.currentMove);
                                     if (BoardGUI.PopUpWin != null)
                                     {
                                           BoardGUI.PopUpWin.setVisible(false);
@@ -186,7 +186,7 @@ public class BoardGUI extends JPanel implements ActionListener
                                           }
                                           Game.curPlayer = Game.lastPlayer;
                                     }
-                                    Game._moves.remove(Game.currentMove);
+                                    Game.everyLastMoves.remove(Game.currentMove);
                               }
                               catch (IndexOutOfBoundsException e)
                               {
@@ -273,7 +273,7 @@ public class BoardGUI extends JPanel implements ActionListener
                                     {
                                           this.theUserInterface.getTheGame().setCurPlayer(ColorEnum.BLACK);
                                           this.theUserInterface.getTheGame().setLastPlayer(ColorEnum.WHITE);
-                                          this.theUserInterface.getTheGame().itIsBlackTurn();
+                                          this.theUserInterface.getTheGame().isBlackTurn();
                                     }
                                     else
                                     {
@@ -309,7 +309,7 @@ public class BoardGUI extends JPanel implements ActionListener
                                     {
                                           this.theUserInterface.getTheGame().setCurPlayer(ColorEnum.BLACK);
                                           this.theUserInterface.getTheGame().setLastPlayer(ColorEnum.WHITE);
-                                          this.theUserInterface.getTheGame().itIsBlackTurn();
+                                          this.theUserInterface.getTheGame().isBlackTurn();
                                     }
                                     else
                                     {
@@ -344,7 +344,7 @@ public class BoardGUI extends JPanel implements ActionListener
                                     {
                                           this.theUserInterface.getTheGame().setCurPlayer(ColorEnum.BLACK);
                                           this.theUserInterface.getTheGame().setLastPlayer(ColorEnum.WHITE);
-                                          this.theUserInterface.getTheGame().itIsBlackTurn();
+                                          this.theUserInterface.getTheGame().isBlackTurn();
                                     }
                                     else
                                     {
@@ -379,7 +379,7 @@ public class BoardGUI extends JPanel implements ActionListener
                                     {
                                           this.theUserInterface.getTheGame().setCurPlayer(ColorEnum.BLACK);
                                           this.theUserInterface.getTheGame().setLastPlayer(ColorEnum.WHITE);
-                                          this.theUserInterface.getTheGame().itIsBlackTurn();
+                                          this.theUserInterface.getTheGame().isBlackTurn();
                                     }
                                     else
                                     {
@@ -419,7 +419,7 @@ public class BoardGUI extends JPanel implements ActionListener
                                     {
                                           this.theUserInterface.getTheGame().setCurPlayer(ColorEnum.BLACK);
                                           this.theUserInterface.getTheGame().setLastPlayer(ColorEnum.WHITE);
-                                          this.theUserInterface.getTheGame().itIsBlackTurn();
+                                          this.theUserInterface.getTheGame().isBlackTurn();
                                     }
                                     else
                                     {
@@ -463,7 +463,7 @@ public class BoardGUI extends JPanel implements ActionListener
                               {
                                     this.theUserInterface.getTheGame().setCurPlayer(ColorEnum.BLACK);
                                     this.theUserInterface.getTheGame().setLastPlayer(ColorEnum.WHITE);
-                                    this.theUserInterface.getTheGame().itIsBlackTurn();
+                                    this.theUserInterface.getTheGame().isBlackTurn();
                               }
                               else
                               {
@@ -525,9 +525,9 @@ public class BoardGUI extends JPanel implements ActionListener
             // les bouttons
             SquareButton currentButton;
 
-            for (int lignCounter = 0; lignCounter < Echiquier.NOMBRE_DE_LIGNES; lignCounter++)
+            for (int lignCounter = 0; lignCounter < Echiquier.LINE_NUMBER; lignCounter++)
             {
-                  for (int columnCounter = 0; columnCounter < Echiquier.NOMBRE_DE_COLONNES; columnCounter++)
+                  for (int columnCounter = 0; columnCounter < Echiquier.COLUMN_NUMBER; columnCounter++)
                   {
 
                         // couleurs de l'échiquier
@@ -565,7 +565,7 @@ public class BoardGUI extends JPanel implements ActionListener
             BoardGUI.buttonsPosition.get(new Position(7, 7)).setPiece(PieceGUI.piecesImage.get(ListPieces.WHITE_ROOK));
 
             // pions
-            for (int pions = 0; pions < Echiquier.NOMBRE_DE_COLONNES; pions++)
+            for (int pions = 0; pions < Echiquier.COLUMN_NUMBER; pions++)
             {
                   BoardGUI.buttonsPosition.get(new Position(6, pions)).setPiece(PieceGUI.piecesImage.get(ListPieces.WHITE_PAWN));
                   BoardGUI.buttonsPosition.get(new Position(1, pions)).setPiece(PieceGUI.piecesImage.get(ListPieces.BLACK_PAWN));

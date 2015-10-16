@@ -23,14 +23,14 @@ public class ROOK extends AbstractPiece
       public ROOK(ColorEnum couleur)
       {
             super(couleur);
-            this.Piecetype = PieceType.ROOK;
+            this.pieceType = PieceType.ROOK;
             if (couleur == ColorEnum.BLACK)
             {
-                  this.PieceName = ListPieces.BLACK_ROOK;
+                  this.pieceName = ListPieces.BLACK_ROOK;
             }
             else
             {
-                  this.PieceName = ListPieces.WHITE_ROOK;
+                  this.pieceName = ListPieces.WHITE_ROOK;
             }
       }
 
@@ -55,7 +55,7 @@ public class ROOK extends AbstractPiece
                   {
                         i = positionDepart.obtenirNumeroDeLigne() + direction[0] * compteurDirection;
                         j = positionDepart.obtenirNumeroDeColonne() + direction[1] * compteurDirection;
-                        if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                        if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                         {
                               positionDeFin = Echiquier.square.get(newPosition = new Position(i, j));
                               if (positionDeFin.getPiece() != null)

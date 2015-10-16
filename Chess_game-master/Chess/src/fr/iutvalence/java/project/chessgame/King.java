@@ -61,14 +61,14 @@ public class King extends AbstractPiece
       {
             super(couleur);
             this.hasAlreadyMove = false;
-            this.Piecetype = PieceType.KING;
+            this.pieceType = PieceType.KING;
             if (couleur == ColorEnum.BLACK)
             {
-                  this.PieceName = ListPieces.BLACK_KING;
+                  this.pieceName = ListPieces.BLACK_KING;
             }
             else
             {
-                  this.PieceName = ListPieces.WHITE_KING;
+                  this.pieceName = ListPieces.WHITE_KING;
             }
       }
 
@@ -101,7 +101,7 @@ public class King extends AbstractPiece
                   {
                         i = position.obtenirNumeroDeLigne() + direction1[0];
                         j = position.obtenirNumeroDeColonne() + direction1[1];
-                        if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                        if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                         {
                               squareTest = Echiquier.square.get(new Position(i, j));
                               if (squareTest.getPiece() != null)
@@ -122,7 +122,7 @@ public class King extends AbstractPiece
                   {
                         i = position.obtenirNumeroDeLigne() + direction1[0];
                         j = position.obtenirNumeroDeColonne() + direction1[1];
-                        if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                        if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                         {
                               squareTest = Echiquier.square.get(new Position(i, j));
                               if (squareTest.getPiece() != null)
@@ -142,7 +142,7 @@ public class King extends AbstractPiece
                   {
                         i = position.obtenirNumeroDeLigne() + direction2[0] * compteurDirection;
                         j = position.obtenirNumeroDeColonne() + direction2[1] * compteurDirection;
-                        if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                        if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                         {
                               squareTest = Echiquier.square.get(new Position(i, j));
                               if (squareTest.getPiece() != null)
@@ -173,7 +173,7 @@ public class King extends AbstractPiece
                   {
                         i = position.obtenirNumeroDeLigne() + direction3[0] * compteurDirection;
                         j = position.obtenirNumeroDeColonne() + direction3[1] * compteurDirection;
-                        if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                        if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                         {
                               squareTest = Echiquier.square.get(new Position(i, j));
                               if (squareTest.getPiece() != null)
@@ -200,7 +200,7 @@ public class King extends AbstractPiece
             {
                   i = position.obtenirNumeroDeLigne() + direction4[0];
                   j = position.obtenirNumeroDeColonne() + direction4[1];
-                  if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                  if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                   {
                         squareTest = Echiquier.square.get(new Position(i, j));
                         if (squareTest.getPiece() != null)
@@ -239,7 +239,7 @@ public class King extends AbstractPiece
             {
                   i = positionDepart.obtenirNumeroDeLigne() + direction[0];
                   j = positionDepart.obtenirNumeroDeColonne() + direction[1];
-                  if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                  if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                   {
                         newPosition = new Position(i, j);
                         positionDeFin = Echiquier.square.get(newPosition);

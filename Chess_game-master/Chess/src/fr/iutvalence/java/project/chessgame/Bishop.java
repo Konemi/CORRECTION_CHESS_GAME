@@ -11,7 +11,7 @@ import java.util.List;
 public class Bishop extends AbstractPiece
 {
       /**
-       * La liste des différentes positions possible terme de coordonnées
+       * La liste des coordonnées
        */
       private final int[][] listPosition = { { 1, 1 }, { 1, -1 }, { -1, -1 }, { -1, 1 } };
 
@@ -23,14 +23,14 @@ public class Bishop extends AbstractPiece
       public Bishop(ColorEnum couleur)
       {
             super(couleur);
-            this.Piecetype = PieceType.BISHOP;
+            this.pieceType = PieceType.BISHOP;
             if (couleur == ColorEnum.BLACK)
             {
-                  this.PieceName = ListPieces.BLACK_BISHOP;
+                  this.pieceName = ListPieces.BLACK_BISHOP;
             }
             else
             {
-                  this.PieceName = ListPieces.WHITE_BISHOP;
+                  this.pieceName = ListPieces.WHITE_BISHOP;
             }
       }
 
@@ -55,7 +55,7 @@ public class Bishop extends AbstractPiece
                   {
                         i = positionDepart.obtenirNumeroDeLigne() + direction[0] * compteurDirection;
                         j = positionDepart.obtenirNumeroDeColonne() + direction[1] * compteurDirection;
-                        if (i >= 0 && i < Echiquier.NOMBRE_DE_LIGNES && j < Echiquier.NOMBRE_DE_COLONNES && j >= 0)
+                        if (i >= 0 && i < Echiquier.LINE_NUMBER && j < Echiquier.COLUMN_NUMBER && j >= 0)
                         {
                               positionDeFin = Echiquier.square.get(newPosition = new Position(i, j));
                               if (positionDeFin.getPiece() != null)
